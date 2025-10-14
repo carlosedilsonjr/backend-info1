@@ -18,9 +18,15 @@ app.post('/login', (req, res) => {
   }
 
   if (login === 'aluno@teste' && senha === 'senhateste') {
-    return res.status(200).json({ message: 'Login realizado com sucesso' });
+    return res.status(200).json({ 
+        sucesso: true,
+        message: 'Login realizado com sucesso'
+    });
   } else {
-    return res.status(401).json({ error: 'Credenciais inválidas' });
+    return res.status(401).json({
+        sucesso: false,
+        error: 'Credenciais inválidas'
+    });
   }
 });
 
