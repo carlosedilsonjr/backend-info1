@@ -1,8 +1,13 @@
 const express = require('express');
+const cors = require("cors");
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(express.json());
+
+const usuarios = [];
 
 // Rota de health check
 app.get('/health', (req, res) => {
@@ -17,7 +22,9 @@ app.post('/login', (req, res) => {
     return res.status(400).json({ error: 'Login e senha são obrigatórios' });
   }
 
-  if (login === 'aluno@teste' && senha === 'senhateste') {
+  const usuario = usuarios.find(u => u.login === login && u.senha === senha)
+
+  if (usuario) {
     return res.status(200).json({ 
         sucesso: true,
         message: 'Login realizado com sucesso'
@@ -29,6 +36,27 @@ app.post('/login', (req, res) => {
     });
   }
 });
+
+// Criar Login
+app.post("/criarLogin", (req, res) => {
+  const { login, senha } = req.body;
+
+  if (!login || !senha) {
+    return res.status(400).json({ error: 'Login e senha são obrigatórios' });
+  }
+
+  const existe = usuarios.find(u => u.login === login)
+
+  if (existe) {
+    return res.status(409).json({ error: 'Login já cadastrado' });
+  }
+
+  usuarios.push({ login, senha });
+  return res.status(201).json({
+    sucesso: true,
+    message: 'Usuário criado com sucesso'
+  });
+})
 
 // Iniciar servidor
 app.listen(PORT, () => {
