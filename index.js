@@ -25,6 +25,7 @@ app.post('/login', (req, res) => {
   const usuario = usuarios.find(u => u.login === login && u.senha === senha)
 
   if (usuario) {
+    console.log(`O usuario "${usuario.login}" fez login na api! (${new Date().toLocaleString()})`)
     return res.status(200).json({ 
         sucesso: true,
         message: 'Login realizado com sucesso'
@@ -52,6 +53,7 @@ app.post("/criarLogin", (req, res) => {
   }
 
   usuarios.push({ login, senha });
+  console.table(usuarios)
   return res.status(201).json({
     sucesso: true,
     message: 'Usuário criado com sucesso'
