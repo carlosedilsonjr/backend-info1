@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require("cors");
-const {viagens} = require("./consts.js")
+const {viagens, futebolNews} = require("./consts.js")
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -64,6 +64,11 @@ app.post("/criarLogin", (req, res) => {
 // Listar Viagens
 app.get("/viagens", (req, res) => {
   return res.status(200).json(viagens)
+})
+
+// Listar Noticias de Futebol
+app.get("/futebolnews", (req, res) => {
+  return res.status(200).json(futebolNews)
 })
 
 // Iniciar servidor
