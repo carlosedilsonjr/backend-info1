@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require("cors");
+const {viagens} = require("./consts.js")
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -58,6 +59,11 @@ app.post("/criarLogin", (req, res) => {
     sucesso: true,
     message: 'Usuário criado com sucesso'
   });
+})
+
+// Listar Viagens
+app.get("/viagens", (req, res) => {
+  return res.status(200).json(viagens)
 })
 
 // Iniciar servidor
