@@ -41,8 +41,7 @@ const viagens = [
     }
   ]
 
-
-futebolNews = [
+const futebolNews = [
     {
       "imagem": "https://images.unsplash.com/photo-1486286701208-1d58e9338013",
       "descricao": "Time brasileiro conquista título continental após emocionante disputa de pênaltis."
@@ -59,10 +58,43 @@ futebolNews = [
       "imagem": "https://images.unsplash.com/photo-1434648957308-5e6a859697e8",
       "descricao": "Seleção surpreende e vence favorita na estreia da Copa do Mundo."
     }
+]
+
+const produtos = [
+    {
+      "nome": "Violão Acústico Yamaha C40",
+      "preco": 899.90,
+      "imagem": "https://images.unsplash.com/photo-1511379938547-c1f69419868d"
+    },
+    {
+      "nome": "Teclado Roland GO:Keys 61",
+      "preco": 2499.00,
+      "imagem": "https://images.unsplash.com/photo-1513883049090-d0b7439799bf"
+    },
+    {
+      "nome": "Fone de Estúdio Audio-Technica ATH-M50x",
+      "preco": 1299.90,
+      "imagem": "https://images.unsplash.com/photo-1737885197946-6d9d79dade89"
+    },
+    {
+      "nome": "Microfone Shure SM58",
+      "preco": 749.00,
+      "imagem": "https://images.unsplash.com/photo-1636294155447-b1a63a5cb084"
+    },
+    {
+      "nome": "Bateria Eletrônica Alesis Nitro Mesh Kit",
+      "preco": 4399.00,
+      "imagem": "https://images.unsplash.com/photo-1647788738100-e138bf960f30"
+    },
+    {
+      "nome": "Guitarra Fender Stratocaster",
+      "preco": 6799.00,
+      "imagem": "https://images.unsplash.com/photo-1642322356665-974c658cee81"
+    }
   ]
   
-
   module.exports = {
     viagens,
-    futebolNews
+    futebolNews,
+    produtos
   }

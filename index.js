@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require("cors");
-const {viagens, futebolNews} = require("./consts.js")
+const {viagens, futebolNews, produtos} = require("./consts.js")
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -69,6 +69,17 @@ app.get("/viagens", (req, res) => {
 // Listar Noticias de Futebol
 app.get("/futebolnews", (req, res) => {
   return res.status(200).json(futebolNews)
+})
+
+//cronograma
+
+//receitas
+
+//tarefas
+
+//produtos
+app.get("/produtos", (req, res) => {
+  return res.status(200).json(produtos)
 })
 
 // Iniciar servidor
