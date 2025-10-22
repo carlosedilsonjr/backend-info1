@@ -90,6 +90,95 @@ router.post("/login", async (req, res) => {
   });
 })
 
+//produtosTech
+router.get("/produtosTech", async (req, res) => {
+  const { data, error } = await supabase.from('produtosTech').select('*');
 
+  if (error) {
+    console.error("Erro ao obter produtos tech da base de dados.");
+    console.error(error);
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.status(200).json(data);
+})
+
+//livros
+router.get("/livros", async (req, res) => {
+  const { data, error } = await supabase.from('livros').select('*');
+
+  if (error) {
+    console.error("Erro ao obter livros da base de dados.");
+    console.error(error);
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.status(200).json(data);
+})
+
+//tarefas
+router.get("/tarefas", async (req, res) => {
+  const { data, error } = await supabase.from('tarefas').select('*');
+
+  if (error) {
+    console.error("Erro ao obter tarefas da base de dados.");
+    console.error(error);
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.status(200).json(data);
+})
+
+//cursos
+router.get("/cursos", async (req, res) => {
+  const { data, error } = await supabase.from('cursos').select('*');
+
+  if (error) {
+    console.error("Erro ao obter cursos da base de dados.");
+    console.error(error);
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.status(200).json(data);
+})
+
+//alunos
+router.get("/alunos", async (req, res) => {
+  const { data, error } = await supabase.from('alunos').select('*');
+
+  if (error) {
+    console.error("Erro ao obter alunos da base de dados.");
+    console.error(error);
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.status(200).json(data);
+})
+
+//aulas
+router.get("/aulas", async (req, res) => {
+  const { data, error } = await supabase.from('aulas').select('*');
+
+  if (error) {
+    console.error("Erro ao obter aulas da base de dados.");
+    console.error(error);
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.status(200).json(data);
+})
+
+//receitas
+router.get("/receitas", async (req, res) => {
+  const { data, error } = await supabase.from('receitas').select('*');
+
+  if (error) {
+    console.error("Erro ao obter receitas da base de dados.");
+    console.error(error);
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.status(200).json(data);
+})
 
 export default router;
