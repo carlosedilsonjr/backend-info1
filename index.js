@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import 'dotenv/config';
 import {viagens, futebolNews, produtos} from "./consts.js";
 import v2routes from "./v2/api.js";
 
