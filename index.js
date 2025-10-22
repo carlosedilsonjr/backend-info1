@@ -1,12 +1,14 @@
 import express from "express";
 import cors from "cors";
 import {viagens, futebolNews, produtos} from "./consts.js";
+import v2routes from "./v2/api.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use("/v2", v2routes)
 
 const usuarios = [];
 
