@@ -93,8 +93,4 @@ const produtos = [
     }
   ]
   
-  module.exports = {
-    viagens,
-    futebolNews,
-    produtos
-  }
+export {viagens, futebolNews, produtos}

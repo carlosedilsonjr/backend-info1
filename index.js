@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require("cors");
-const {viagens, futebolNews, produtos} = require("./consts.js")
+import express from "express";
+import cors from "cors";
+import {viagens, futebolNews, produtos} from "./consts.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
