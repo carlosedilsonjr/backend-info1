@@ -181,4 +181,17 @@ router.get("/receitas", async (req, res) => {
   res.status(200).json(data);
 })
 
+//jogos
+router.get("/jogos", async (req, res) => {
+  const { data, error } = await supabase.from('jogos').select('*');
+
+  if (error) {
+    console.error("Erro ao obter jogos da base de dados.");
+    console.error(error);
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.status(200).json(data);
+})
+
 export default router;
