@@ -194,4 +194,43 @@ router.get("/jogos", async (req, res) => {
   res.status(200).json(data);
 })
 
+//viagens
+router.get("/viagens", async (req, res) => {
+  const { data, error } = await supabase.from('viagens').select('*');
+
+  if (error) {
+    console.error("Erro ao obter viagens da base de dados.");
+    console.error(error);
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.status(200).json(data);
+})
+
+//futebolNews
+router.get("/futebolNews", async (req, res) => {
+  const { data, error } = await supabase.from('futebolNews').select('*');
+
+  if (error) {
+    console.error("Erro ao obter futebolNews da base de dados.");
+    console.error(error);
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.status(200).json(data);
+})
+
+//produtosMusica
+router.get("/produtosMusica", async (req, res) => {
+  const { data, error } = await supabase.from('produtosMusica').select('*');
+
+  if (error) {
+    console.error("Erro ao obter produtosMusica da base de dados.");
+    console.error(error);
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.status(200).json(data);
+})
+
 export default router;
