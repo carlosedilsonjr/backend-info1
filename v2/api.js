@@ -233,4 +233,17 @@ router.get("/produtosMusica", async (req, res) => {
   res.status(200).json(data);
 })
 
+//modulos
+router.get("/modulos", async (req, res) => {
+  const { data, error } = await supabase.from('modulos').select('*');
+
+  if (error) {
+    console.error("Erro ao obter modulos da base de dados.");
+    console.error(error);
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.status(200).json(data);
+})
+
 export default router;
